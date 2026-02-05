@@ -108,12 +108,12 @@ This research uses a combination of proprietary and publicly available data. Due
 |------|-------------|---------|
 | `F-F_Research_Data_5_Factors_2x3_daily.xlsx` | Fama-French 5-factor daily returns | Kenneth R. French Data Library (public) |
 
-### Partially Included Data
-| File | What's Included | What's Not Included | Why |
-|------|-----------------|---------------------|-----|
-| `gemini_esg_data.db` | **Aggregate predictions** (rolling averages, miss metrics) and **sample flags** | Individual document-level predictions, certainty scores, raw LLM outputs | Refinitiv/LSEG ESG data licensing prohibits redistribution of underlying scores |
+### Not Included (Proprietary)
+| File | Description | Why Not Included |
+|------|-------------|------------------|
+| `gemini_esg_data.db` | Main SQLite database with LLM predictions and ESG scores | Refinitiv/LSEG ESG data licensing prohibits redistribution |
 
-**Note on LLM Predictions**: While our Gemini model predictions are original work, they were generated from Refinitiv ESG scores as training/anchoring data. The rolling averages and aggregate metrics we include do not expose individual scores, allowing researchers to replicate the economic analyses (H1, H2, H4) without the raw proprietary data.
+**Note on LLM Predictions**: While our Gemini model predictions are original work, they were generated from Refinitiv ESG scores as training/anchoring data. Licensing restrictions prevent redistribution of any data derived from proprietary ESG scores.
 
 ### Proprietary Data (Not Included - Must Be Obtained)
 The following datasets are required for full replication:
@@ -130,9 +130,11 @@ The following datasets are required for full replication:
 
 ### Replication Without Proprietary Data
 Researchers without access to CRSP/Refinitiv can still:
-- Replicate H1/H2/H3 analyses using the included aggregate metrics
 - Verify statistical methodology and code logic
-- Substitute with alternative return data (Yahoo Finance, etc.) by modifying `utils.py`
+- Understand the complete analytical pipeline
+- Substitute with alternative data sources by modifying `utils.py` and `config.py`
+
+For data access inquiries, please contact the author.
 
 ## Quick Start
 
@@ -155,7 +157,7 @@ cd scripts
 python RUN_ALL_ANALYSES.py
 ```
 
-**Note**: Scripts 5x, 11, and 12 require CRSP data. Other analyses will run with included data.
+**Note**: All analysis scripts require proprietary data (see Data Requirements). The code is provided for methodology transparency and replication by researchers with appropriate data access.
 
 ## Key Results
 
@@ -190,14 +192,14 @@ MIT License - see [LICENSE](LICENSE) for details.
 ## Version Notes
 
 ### Repository vs Paper Appendix
-The paper appendix states that "model predictions" are available at this repository.
-Due to Refinitiv/LSEG licensing restrictions, individual document-level predictions
+Due to Refinitiv/LSEG licensing restrictions, model predictions and ESG data
 cannot be redistributed. This repository contains:
 - Complete analysis code for all hypotheses
 - Methodology documentation
-- Aggregate metrics sufficient for replication of economic analyses
+- Public Fama-French factor data
 
-Individual ESG scores and predictions require separate licensing from Refinitiv.
+To replicate the analyses, researchers must obtain ESG data and CRSP returns through
+appropriate licensing agreements. Contact the author for guidance on data acquisition.
 
 ### Differences from Conference Submissions
 This repository reflects minor technical corrections identified during code review
@@ -212,7 +214,8 @@ Should the paper be accepted for presentation, the corrected version will be pre
 
 ## Contact
 
-Luca Johann Schmidt
+Luca Johann Schmidt  
+luca.schmidt@ebs.edu
 
 ---
 

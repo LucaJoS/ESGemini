@@ -14,6 +14,12 @@ Place the following files in this directory:
 | `S&P100_volume_hard.sqlite` | Daily trading volume | Refinitiv Eikon |
 | `S&P100_market_cap_hard.sqlite` | Market capitalization | Refinitiv Eikon |
 
+Additionally, place the main database in `data/` (parent directory):
+
+| File | Description | Source |
+|------|-------------|--------|
+| `gemini_esg_data.db` | LLM predictions and ESG scores | Author (contact for access) |
+
 ## Database Schemas
 
 ### CRSP_SP100_ReturnData.db
@@ -29,3 +35,8 @@ Place the following files in this directory:
 - All dates should be in YYYY-MM-DD format
 - Returns should be decimal (e.g., 0.01 = 1%)
 - If you have data in a different format, update `scripts/config.py` accordingly
+
+## Contact
+
+For inquiries about data access or replication assistance:  
+Luca Johann Schmidt - luca.schmidt@ebs.edu
