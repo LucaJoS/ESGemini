@@ -1,0 +1,11 @@
+# ESGemini Replication Requirements
+# Python 3.9+ required
+
+pandas>=1.5.0
+numpy>=1.21.0
+scipy>=1.9.0
+matplotlib>=3.6.0
+seaborn>=0.12.0
+statsmodels>=0.13.0
+scikit-learn>=1.1.0
+openpyxl>=3.0.0

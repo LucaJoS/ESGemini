@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-specific - Verification docs
+temp/
+
+# Exclude paper source and internal docs (private)
+paper/
+docs/
+
+# Exclude all generated results (reproducible via RUN_ALL_ANALYSES.py)
+results/
+
+# Proprietary data (licensing restrictions)
+data/gemini_esg_data.db
+data/proprietary___not_available/*.db
+data/proprietary___not_available/*.sqlite
+
+# Legacy pickle files
+*.pkl
+
+# LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
